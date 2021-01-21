@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>CBC Meraki IoT Demo</title>
+        <meta name="description" content="CBC Meraki IoT Demo">
+        {% include "include/meta-header.html" %}
+    </head>
+    <body class="cui">
+        <nav class="header" id="styleguideheader" role="navigation">
+          {% include "include/top-menu.html" %} 
+        </nav>
+        <div class="content content--alt">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Sidemenu -->
+                    {% include "include/side-menu.html" %}
+
+                    <div class="col-12 col-lg-9 col-xl-10">
+                        <div class="section">
+                            <div class="row">
+                                <div class="col-xl-8">
+                                    <div class="panel panel--loose panel--raised base-margin-bottom">
+                                        <h2 class="subtitle">Show Latest Entrances</h2>
+                                        <hr>
+                                        <div class="section">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    {% if snapshot_data: %}
+                                                        {% for key,value in snapshot_data.items(): %}
+                                                            <h3>{{ value.name }} ({{ key }})</h3>
+                                                            {% for image in value.images: %}
+                                                                <p><img src="{{ image.img_url }}"><br>
+                                                                    <b>{{ image.img_time }}</b> </p> 
+                                                            {% endfor %}
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4">
+                                    <div class="panel panel--loose panel--raised">
+                                        <h2 class="subtitle">Get Latest Data</h2>
+                                        <hr>
+                                        <div class="section">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    {% if result: %}
+                                                      Success! The Snapshots are being downloaded. Please wait a few minutes and then reload...
+                                                    {% else %}
+                                                    <form action="" method="post">
+                                                        <p>
+                                                        <label for="mt_sensor">Which door?</label>
+                                                        <select name="mt_sensor" id="mt_sensor">
+                                                            {% for key,value in form_request_data.items(): %}
+                                                            <option value='{ "mt_door_serial" : "{{ key }}", "snapshot_cam_serial" : "{{ value.snapshot_cam_serial }}" }'>{{ value.name }} ({{ key }})</option>
+                                                            {% endfor %}
+                                                            </select>
+                                                        </p>
+                                                        <p>
+                                                            <label for="num_entries">No of total (open/close) events</label>
+                                                            <input type="text" name="num_entries" value="10">
+                                                        </p>
+                                                        <p>
+                                                            <input type="submit" value="Get latest data">
+                                                        </p>
+                                                    </form>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer">
+                    {% include "include/footer.html" %}
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>

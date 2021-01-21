@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>CBC Meraki IoT Demo</title>
+        <meta name="description" content="CBC Meraki IoT Demo">
+        {% include "include/meta-header.html" %}
+    </head>
+    <body class="cui">
+        <nav class="header" id="styleguideheader" role="navigation">
+          {% include "include/top-menu.html" %} 
+        </nav>
+        <div class="content content--alt">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Sidemenu -->
+                    {% include "include/side-menu.html" %}
+
+                    <div class="col-12 col-lg-9 col-xl-10">
+                        <div class="section">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="panel panel--loose panel--raised">
+                                        <iframe src="http://192.168.100.11:3000/d/2499YnBMz/cbc?orgId=1&kiosk" frameborder="0" style="overflow:hidden;min-height:768px;width:100%"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer">
+                    {% include "include/footer.html" %}
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>

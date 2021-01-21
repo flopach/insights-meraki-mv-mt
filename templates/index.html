@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>CBC Meraki IoT Demo</title>
+        <meta name="description" content="CBC Meraki IoT Demo">
+        {% include "include/meta-header.html" %}
+    </head>
+    <body class="cui">
+        <nav class="header" id="styleguideheader" role="navigation">
+          {% include "include/top-menu.html" %} 
+        </nav>
+        <div class="content content--alt">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Sidemenu -->
+                    {% include "include/side-menu.html" %}
+
+                    <div class="col-12 col-lg-9 col-xl-10">
+                        <div class="section">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="panel panel--loose panel--raised base-margin-bottom">
+                                        <h2 class="subtitle">Introduction - Where are you now?</h2>
+                                        <hr>
+                                        <div class="section">
+                                            <div class="row">
+                                                <div class="col-md-10">
+                                                    <div class="display-4">A dashboard to showcase the power of Meraki's IoT Products!</div>
+                                                    <p></p>
+                                                    <div class="text-size-16"> Current ready implementations:
+                                                    <ul>
+                                                        <li>Camera + MT Snapshot</li>
+                                                        <li>People Detection with MQTT</li>
+                                                    </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="gauge-container">
+                                                        <div class="gauge gauge--success gauge--large" data-percentage="100">
+                                                            <div class="gauge__circle">
+                                                                <div class="mask full">
+                                                                    <div class="fill"></div>
+                                                                </div>
+                                                                <div class="mask half">
+                                                                    <div class="fill"></div>
+                                                                    <div class="fill fix"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="gauge__inset">
+                                                                <div class="gauge__percentage">100<sup class="text-size-20">%</sup></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="gauge__label">Cisco API Power</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer">
+                    {% include "include/footer.html" %}
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
